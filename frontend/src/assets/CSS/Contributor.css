@@ -1,0 +1,112 @@
+.contributors-container {
+  animation: slideInUp 3s cubic-bezier(0.23, 1, 0.32, 1) 18s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contributors-heading {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2.7rem;
+  color: #d0fe9e;
+  margin-top: 40px;
+  letter-spacing: 1px;
+}
+
+.contributors-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.contributor-card {
+  position: relative;
+  width: 220px;
+  height: 260px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  background: #181b20;
+  transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s;
+}
+
+.contributor-card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(50,180,90,0.44);
+  z-index: 2;
+}
+
+.contributor-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.25s;
+  display: block;
+}
+
+.contributor-card:hover .contributor-img {
+  filter: blur(3px) brightness(0.85);
+}
+
+.contributor-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 40, 41, 0.87);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.28s;
+  color: #fffefb;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.contributor-card:hover .contributor-overlay {
+  opacity: 1;
+}
+
+.contributor-overlay h3 {
+  margin-bottom: 8px;
+  color: #affd5b;
+  letter-spacing: 0.5px;
+  font-size: 1.24rem;
+}
+
+.contributor-overlay p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #c2ffd9;
+}
+
+.contributor-overlay a {
+  color: #72c8fb;
+  text-decoration: none;
+  margin: 2px 9px;
+  font-weight: 500;
+  font-size: 1.03rem;
+  transition: color 0.15s;
+  border-bottom: 1px dotted #72c8fb;
+}
+
+.contributor-overlay a:hover {
+  color: #affd5b;
+  border-bottom: 1px solid #affd5b;
+}

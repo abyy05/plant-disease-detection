@@ -1,0 +1,283 @@
+:root {
+  --reveal-duration: 4s;
+  --button-delay: calc(var(--reveal-duration) + 0.6s);
+  --about-delay: calc(var(--reveal-duration) + 2s);
+  --about-text-delay: calc(var(--about-delay) + 1s);
+}
+
+/* --------------------
+   Project Description Box
+---------------------*/
+.Project-des {
+  color: rgb(255, 238, 140);
+  font-size: 1.5rem;
+  margin: 32px auto;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(255, 253, 253, 0.07);
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  width: 90vw;
+  border-radius: 30px;
+  transition: box-shadow 0.2s ease, background 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Project-des p {
+  padding: 38px 28px;
+  margin: 0;
+  font-size: 1.15rem;
+  color: rgb(251, 250, 230);
+  letter-spacing: 0.5px;
+  line-height: 1.7;
+  position: relative;
+  overflow: hidden;
+  --duration: var(--reveal-duration);
+  animation: revealDown var(--duration) ease-out 0.6s forwards;
+}
+
+/* Reveal from top to bottom */
+@keyframes revealDown {
+  0% { clip-path: inset(0 0 100% 0);}
+  100% { clip-path: inset(0 0 0 0);}
+}
+
+/* Hover glow */
+.Project-des:hover {
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* --------------------
+   Try It Now Button
+---------------------*/
+.TryIt {
+  background: linear-gradient(135deg, #ffcc70, #ffb347);
+  color: #1a1a1a;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(255, 195, 0, 0.4);
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  margin: 25px auto 38px auto;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation:
+    slideUpIn 0.8s ease-out forwards,
+    pulse 2.5s ease-in-out infinite;
+  animation-delay: var(--button-delay), calc(var(--button-delay) + 0.8s);
+}
+
+@keyframes slideUpIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 12px rgba(255, 235, 150, 0.4);}
+  50%     { box-shadow: 0 0 20px rgba(255, 235, 150, 0.8);}
+}
+
+.TryIt:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 220, 100, 0.6);
+  background: linear-gradient(135deg, #ffe066, #ffcc33);
+}
+.TryIt:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(255, 220, 100, 0.4);
+}
+
+/* --------------------
+   Agricare Pro About Sections
+---------------------*/
+.about-agriCarePro,
+.about-agriCarePro1,
+.about-agriCarePro2 {
+  color: white;
+  width: 90vw;
+  margin: 32px auto;
+  font-family: 'Courier New', Courier, monospace;
+  background: rgba(255, 253, 253, 0.07);
+  box-shadow: 9px 9px 16px rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  border-radius: 30px;
+  padding: 24px;
+  overflow: hidden;
+  transition: 
+    transform 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1),
+    background 0.22s cubic-bezier(0.23, 1, 0.32, 1);
+  /* No transform property here so entrance animation + scale will work */
+}
+
+.about-agriCarePro h2,
+.about-agriCarePro1 h2,
+.about-agriCarePro2 h2 {
+    font-size: 2rem;
+}
+
+.about-agriCarePro:hover,
+.about-agriCarePro1:hover,
+.about-agriCarePro2:hover {
+  box-shadow: 12px 12px 22px rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(2.05);
+  z-index: 2;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-container-image img {
+  width: 550px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgb(255, 230, 90);
+  text-align: left;
+  line-height: 1.7;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* RevealDown for about paragraphs */
+.about-agriCarePro .about-text {
+  position: relative;
+  overflow: hidden;
+  --duration: var(--reveal-duration);
+  animation: revealDown var(--duration) ease-out var(--about-text-delay) forwards;
+}
+.about-agriCarePro1 .about-text {
+  position: relative;
+  overflow: hidden;
+  --duration: var(--reveal-duration);
+  animation: revealDown var(--duration) ease-out calc(var(--about-text-delay) + 4s) forwards;
+}
+.about-agriCarePro2 .about-text {
+  position: relative;
+  overflow: hidden;
+  --duration: var(--reveal-duration);
+  animation: revealDown var(--duration) ease-out calc(var(--about-text-delay) + 7s) forwards;
+}
+
+/* Slide entrances for sections */
+.about-agriCarePro {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: var(--about-delay);
+}
+.about-agriCarePro1 {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideInLeft 1s ease-out forwards;
+  animation-delay: calc(var(--about-delay) + 4s);
+}
+.about-agriCarePro2 {
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: calc(var(--about-delay) + 7.8s);
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(100%);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-100%);}
+  to   { opacity: 1; transform: translateX(0);}
+}
+
+/* --------------------
+   Responsive Tweaks
+---------------------*/
+@media (max-width: 900px) {
+  .Project-des {
+    width: 96vw;
+    font-size: 1.15rem;
+    border-radius: 18px;
+    margin: 24px auto;
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.6);
+  }
+  .Project-des p {
+    padding: 24px 14px;
+    font-size: 1rem;
+  }
+  .TryIt {
+    font-size: 1rem;
+    padding: 10px 24px;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-container-image img {
+    width: 90%;
+  }
+  .about-text {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .Project-des {
+    width: 98vw;
+    font-size: 1rem;
+    border-radius: 12px;
+    margin: 16px auto;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+  }
+  .Project-des p {
+    padding: 12px 10px;
+    font-size: 0.95rem;
+  }
+  .TryIt {
+    font-size: 0.95rem;
+    padding: 8px 20px;
+  }
+  .about-container-image img {
+    width: 100%;
+  }
+}
+
+/* --------------------
+   Browser Compatibility
+---------------------*/
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .Project-des,
+  .about-agriCarePro,
+  .about-agriCarePro1,
+  .about-agriCarePro2 {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}

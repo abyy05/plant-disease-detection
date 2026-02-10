@@ -1,0 +1,191 @@
+/* 🌿 Global Page Styling */
+
+/* 🌿 Main Container – full width */
+.converter-container {
+  flex: 1;
+  min-width: 100%;
+  margin: 0;
+  padding: 30px 8%;
+  box-shadow: none;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  background-image: url("C:\Users\Admin\Desktop\Practice project\plant diease detection\plant-api\frontend\public\bgLeaf3.jpg") ;
+  
+  
+}
+
+/* 🌾 Upload, Output, etc. Sections */
+.upload-section,
+.text-output-section {
+  background: #0a0a0a0a;
+  border: 1px solid #d2e9ff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  flex-grow: 0;
+  box-shadow: 9px 9px 16px rgb(0, 0, 0);
+  backdrop-filter: blur(10px);
+  animation: slideInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0s 1 both;
+}
+
+.upload-section h3,
+.text-output-section h3 {
+  margin-bottom: 15px;
+  text-align: center;
+  color: #f6f630;
+  font-family:  'Helvetica Neue', sans-serif;
+  text-shadow: #000000 1px 1px 2px;
+  font-size:1.7rem;
+}
+
+/* 🌿 File Preview */
+.preview-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.preview-container p{
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: #000000 1px 1px 2px;
+}
+.preview-image {
+  display: block;
+  width:40%;
+  max-height:40%;
+  object-fit: cover;
+  border-radius:10px;
+  border: 1px solid #d2e9ff;
+  margin: 15px 0;
+
+}
+
+/* 🌱 Buttons */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.button-group button {
+  padding: 10px 18px;
+  border: none;
+  background: #4c6ef5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(5px);
+  box-shadow: 9px 9px 16px rgb(0, 0, 0);
+  font-size: 1rem;
+}
+
+.button-group button:hover {
+  background: #3b5bdb;
+  transform: translateY(-1px);
+}
+
+/* 🌦️ Textarea */
+.text-output-section textarea {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  resize: none;
+  margin-bottom: 10px;
+  font-size: 21px;
+  line-height: 1.5;
+  background: #ffeeeeae;
+  color: #000000;
+  backdrop-filter: blur(5px);
+}
+
+/* 🌸 Footer */
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 20px;
+  color: #fbf46c;
+  border-top: 1px solid #eee;
+  background-color: none;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 18px 0;
+  font-size: 23px;
+  color: #f5f8f6;
+  border-top: 1px solid #cfd8dc;
+  background: rgba(255,255,255,0.06);
+  font-size: 1.5rem;
+}
+
+.contact-footer a {
+  color: #fafbfd;
+  margin-left: 6px;
+  margin-right: 6px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-footer a:hover {
+  text-decoration: underline;
+  color: #3b5bdb;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px); /* Start further below for a clear upward move */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header nav {
+    margin-top: 10px;
+  }
+
+  .header nav a {
+    margin: 0 10px;
+  }
+
+  .upload-section,
+  .text-output-section {
+    padding: 15px;
+  }
+
+  .text-output-section textarea {
+    height: 220px;
+    font-size: 0.7rem;
+  }
+
+   .contact-footer {
+    font-size: 13px;
+    padding: 14px 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .contact-footer {
+    font-size: 12px;
+    padding: 12px 0;
+  }
+}

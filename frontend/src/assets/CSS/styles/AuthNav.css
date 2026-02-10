@@ -1,0 +1,11 @@
+.topnav {
+  padding: 10px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  display:flex; gap:12px; align-items:center;
+
+}
+
+.topnav a { font-size:2rem;text-decoration:none; color:#e8eee8; padding:6px 10px; border-radius:6px; font-weight: 800; text-shadow: black 2px 2px; }
+
+.topnav a:hover { background:#eef3fb19; backdrop-filter: blur(10px); box-shadow: black 2px 2px 5px;}
+
+.home { padding:40px; text-align:center; }

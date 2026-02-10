@@ -1,0 +1,193 @@
+.align-div-center{
+    display: flex;
+    justify-content: center;
+    animation: slideInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.25s 1 both; 
+}
+
+/* Container */
+.forecast-wrap-container {
+  background-color: #efe5e50a;
+  border-radius: 16px;
+  border: 1px solid #d2e9ff;
+  padding: 1.2rem;
+  box-shadow: 9px 9px 16px rgb(0, 0, 0);
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  width: 900px;
+  backdrop-filter: blur(4px);
+}
+
+/* Header */
+.forecast-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.forecast-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #67b1ff;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+.sub {
+  font-size: 1.1rem;
+  color: #f7f5f5;
+  text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+/* Scroll buttons */
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.scroll-btn {
+  border: none;
+  background: #e3f0ff;
+  color: #0072f5;
+  font-size: 1.5rem;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.scroll-btn:hover {
+  background: #0072f5;
+  color: white;
+}
+
+/* Forecast Row */
+.forecast-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  padding-bottom: 0.4rem;
+}
+
+.forecast-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+.forecast-row::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 3px;
+}
+
+/* Forecast Card */
+.forecast-card {
+  flex: 0 0 150px;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.forecast-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Elements */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day {
+  font-weight: 600;
+  color: #0072f5;
+}
+
+.temp {
+  font-size: 1.5rem;
+  margin: 0.6rem 0 0.2rem 0;
+  color: #222;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.pop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.pop-badge {
+  background: #e0f2ff;
+  color: #0072f5;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon.sun {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/869/869869.png");
+}
+
+.icon.rain {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1163/1163624.png");
+}
+
+.icon.cloud {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1163/1163620.png");
+}
+
+/* Dragging State */
+.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px); /* Start further below for a clear upward move */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .forecast-wrap-container {
+    width: 100%;
+    padding: 1rem;
+    margin: 10px;
+  }
+
+  .forecast-card {
+    flex: 0 0 130px;
+    padding: 0.8rem;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+}

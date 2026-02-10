@@ -1,0 +1,109 @@
+.practice-parent-container{
+    max-width:100vw;
+    animation: slideInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) 0.75s 1 both; 
+}
+.practice-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  max-width: 900px;
+}
+
+.practice-card {
+  flex: 1 1 250px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease
+}
+
+.practice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Best Practices Style */
+.practice-card.best {
+  background-color: #e6f4ea;
+  border: 1px solid #c7e7cc
+}
+
+.practice-card.best ul li::before {
+  content: "✔";
+  color: #2e7d32;
+  margin-right: 8px;
+}
+
+/* ⚠ Avoid These Style */
+.practice-card.avoid {
+  background-color: #fdeaea;
+  border: 1px solid #f5c2c0;
+}
+
+.practice-card.avoid ul li::before {
+  content: "✖";
+  color: #d32f2f;
+  margin-right: 8px;
+}
+
+/* Header Styling */
+.footer-card-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-card-header h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-card-header i {
+  font-size: 18px;
+}
+
+/* List Styling */
+.practice-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.practice-card ul li {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px); /* Start further below for a clear upward move */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .practice-parent-container{
+    margin-top: 25px;
+  }
+  .practice-container {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 350px;
+    margin: 2px auto;
+  }
+
+  .practice-card {
+    flex: 1 1 250px;
+  }
+}

@@ -1,0 +1,131 @@
+body {
+  background-image: url("../../../../public/bgLeafAuth.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.auth-container {
+  width: 600px;
+  max-width: 96vw;
+  margin: 120px auto;
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid #d2e9ff;
+  box-shadow: 9px 9px 16px rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(10, 10, 10, 0.04);
+  backdrop-filter: blur(5px);
+  animation: slideInUp 1.5s cubic-bezier(0.23, 1, 0.32, 1) 0s 1 both;
+}
+
+.auth-container h2 {
+  margin: 0 0 6px 0;
+  color: #cbf954;
+  text-shadow: rgb(0, 0, 0) 2px 2px 5px;
+  font-size: 2.5rem;
+}
+
+.auth-container input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #31a214;
+  font-size: 1.5rem;
+  width: 500px;
+  max-width: 100%;
+  margin: 8px 0;
+  color: #1e7907;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.auth-container button {
+  padding: 10px;
+  border-radius: 6px;
+  background: #31a214;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  width: 180px;
+  max-width: 100%;
+  box-sizing: border-box;
+  align-self: flex-start;
+}
+
+.auth-container .msg {
+  color: #10ff34;
+  font-size: 1.1rem;
+  margin-top: 8px;
+  text-shadow: rgb(0, 0, 0) 2px 2px 5px;
+  font-weight: 700;
+}
+
+
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(70px); /* Start further below for a clear upward move */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Tablet breakpoint */
+@media (max-width: 900px) {
+  .auth-container {
+    width: 90vw;
+    margin: 70px auto;
+    padding: 14px;
+  }
+
+  .auth-container input {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 8px;
+  }
+  .auth-container h2 {
+    font-size: 1.5rem;
+  }
+  .auth-container button {
+    width: 150px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 600px) {
+  .auth-container {
+    width: 98vw;
+    margin: 100px auto;
+    border-radius: 7px;
+    padding: 9px;
+    gap: 8px;
+  }
+
+  .auth-container h2 {
+    font-size: 1.14rem;
+    margin-bottom: 3px;
+  }
+  .auth-container input {
+    font-size: 0.89rem;
+    padding: 7px;
+  }
+  .auth-container button {
+    width: 100px;
+    font-size: 0.85rem;
+    padding: 7px;
+  }
+  .auth-container .msg {
+    font-size: 0.97rem;
+    margin-top: 5px;
+  }
+}
